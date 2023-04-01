@@ -1,67 +1,220 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 @import url('https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 @import url('animate.min.css');
 @import url('reset.css');
 /* 
 font-family: 'Montserrat', sans-serif;
 font-family: 'Noto Sans KR', sans-serif; 
 */
+*{box-sizing: border-box;}
 html,body{
     height:100%;
     margin:0;
     padding:0;
+    
+}
+a{
+    color:#000;
 }
 body{
     font-family: 'Noto Sans KR', sans-serif; 
     color:#777;
     font-size:16px;
+    overflow-x:hidden;
 }
+.container{
+    max-width:1320px;
+}
+/**** header ****/
 header{
     width:100%;
     position:fixed;
-    height:60px;
+    height:50px;
     display: flex;
     justify-content: space-between;
-    background-color: rgba(0,0,0,0.05);
+    z-index: 10;
+    transition:0.3s;
+}
+header:hover{
+    background-color: rgba(0,0,0,0.5);
+    height:55px;
+}
+header:hover a{
+    color:#fff;
 }
 header nav{
+    max-width:40%;
+    flex:0 0 40%;
     margin-top:20px;
     margin-right:50px;
 }
+header:hover .gnb li a::after{
+    background-color: #fff;
+}
 .gnb{
     display: flex;
-    
 }
 .gnb li{
     width:25%;
     margin-right:30px;
 }
 .gnb li a{
+    display:inline-block;
     font-family: 'Montserrat', sans-serif;
     font-size:20px;
-    color:#000;
-}
 
-
-.sec1{
-    max-width:100%;
-    height:100%;
-    background-color: #D5C9BF;
-}
-.intro-box{
-    margin-top:200px;
-}
-.notebook{
-    width:80%;
-    height:200%;
     position: relative;
-    background: url('../images/com.png')no-repeat;
-    background-size:100%;
-    margin-left:100px;
-    margin-top:120px;
 }
-.slider{
+.gnb li a::after{
+    content:"";
+    width:100%;
+    height:2px;
+    background-color: #000;
+    position:absolute;
+    bottom:-4px;
+    left:0;
+    transform: scaleX(0);
+    transition: 0.3s;
+}
+.gnb li a:hover{
+    text-decoration: none;
+    font-weight:600;
+
+}
+.gnb li a:hover::after{
+    transform:scaleX(1);
+}
+.gnb li a.active{
+    text-decoration: none;
+    font-weight:600;
+}
+.gnb li a.active::after{
+    transform:scaleX(1);
+}
+header:hover .hamb{
+    border-color:#fff;
+}
+.hamb{
+    position:relative;
+    width:35px;
+    height:35px;
+    border:2px solid #000;
+    border-radius: 5px;
+    display:none;
+    margin:10px;
+}
+header:hover .hamb span{
+    background-color: #fff;;
+}
+.hamb span{
     position: absolute;
-    left:21.5%;
-    top:6%;
+    width:20px;
+    height:2px;
+    background-color: #000;
+    transition: 0.3s;
+}
+.hamb span:first-child{
+    top:6px;
+    left:5px;
+}
+.hamb span:nth-child(2){
+    top:14px;
+    left:5px;
+}
+.hamb span:last-child{
+    top:22px;
+    left:5px;
+}
+.act span:first-child{
+    width:5px;
+    top:14px;
+}
+.act span:nth-child(2){
+    width:5px;    
+    left:13px;
+}
+.act span:last-child{
+    width:5px;
+    top:14px;
+    left:22px;
+}
+/**** intro ****/
+.intro{
+    background-color: #D5C9BF;
+    padding-top:50px;
+    padding-bottom:100px;
+}
+.intro-text{
+    margin-top:150px;
+    margin-bottom:100px;
+    margin-left:50px;
+}
+.intro-text h1{
+    font-family: 'Montserrat', sans-serif;
+    font-size:70px;
+    color:#fff;
+    margin:20px 0;
+}
+.intro-text p{
+    font-family: 'Montserrat', sans-serif;
+    font-size:30px;
+    margin-top:40px;
+    color:#fff7f7;
+}
+.intro-img{
+    width:100%;
+    margin:100px 0;
+}
+.intro-img img{
+    width:100%;
+}
+
+/**** Jeffery ****/
+.Jeffery{
+
+}
+
+/**** scrollUp ****/
+#scrollUp{
+    position:fixed;
+    bottom:50px;
+    right:50px;
+    background-color: #D5C9BF;
+    width:50px;
+    height:50px;
+    padding:15px 0;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    display: none;
+}
+#scrollUp>i{
+    font-size:20px;
+    color:#929292;
+}
+
+.samc{
+    height:3000px;
+}
+@media (max-width:992px){
+    
+    .intro-img{
+        margin-top:150px;
+    }
+}
+@media (max-width:768px){
+    .intro-img{
+        display:none;
+    }
+}
+
+@media (max-width:576px){
+    header nav{
+        display:none;
+    }
+    .hamb{
+        display:block;
+    }
+    
 }

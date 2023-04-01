@@ -10,34 +10,61 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
+    <header id="header">
         <div class="bin"></div>
         <nav>
             <ul class="gnb">
-                <li><a href="#">Intro</a></li>
-                <li><a href="#">Jeffery</a></li>
-                <li><a href="#">skills</a></li>
-                <li><a href="#">portfolio</a></li>
+                <li><a href="javascript:void(0)" class="trans" onclick="transPage(0)">Intro</a></li>
+                <li><a href="javascript:void(0)" class="trans" onclick="transPage(1)">Jeffery</a></li>
+                <li><a href="javascript:void(0)" class="trans" onclick="transPage(2)">Portfolio</a></li>
+                <li><a href="javascript:void(0)" class="trans" onclick="transPage(3)">Contact</a></li>
             </ul>
         </nav>
+        <div id="hamb" class="hamb" onclick="hambOn()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </header>
-    <section class="sec1">
+    <section class="intro">
         <div class="row">
-            <div class="col-3">
-                <div class="intro-box">
-                    <h1>Jeffery's Story</h1>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="intro-text">
+                    <h1>Jeffery's</h1>
+                    <h1>Story</h1>
+                    <p>Full Stack Programmer</p>
                 </div>
             </div>
-            <div class="col-9">
-                <div class="notebook">
-                    <div class="slider">
-                        asdf
-                    </div>
+            <div class="col-lg-8 col-md-8 col-sm-12">
+                <div class="intro-img">
+                    <img src="images/intro.png" alt="#">
                 </div>
             </div>
         </div>
     </section>
+    <section class="Jeffery">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-sm-12">
+                    2
+                </div>
+    
+                <div class="col-lg-9 col-sm-12">
+                    3
+                </div>
+            </div>
+        </div>
+        
+    </section>
 
+    <div class="samc">
+
+    </div>
+
+    <!-- scrollUp -->
+    <div id="scrollUp" onclick="scrollUp()">
+        <i class="fa-solid fa-up-long"></i>
+    </div>
     <script src="js/jquery-1.12.4.min.js"></script>
     <script src="js/script.js"></script>
 </body>
